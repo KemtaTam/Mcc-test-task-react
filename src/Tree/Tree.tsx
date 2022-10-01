@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { initialTree } from "../App";
 import { Row } from "./Row/Row";
 import s from "./Tree.module.css";
 
@@ -12,15 +13,9 @@ export const Tree = () => {
 	const [tree, setTree] = useState([] as Array<NodeType>);
 	const [uniqueId, setUniqueId] = useState(1);
 
-	const initialTree = [
-		{
-			title: "Node 1",
-			id: 0,
-		},
-	];
-
 	useEffect(() => {
-		setTree(initialTree);
+		// Deep clone
+		setTree(JSON.parse(JSON.stringify(initialTree)));
 	}, []);
 
 	const addRowHandler = (id: number) => {
@@ -85,7 +80,8 @@ export const Tree = () => {
 	};
 
 	const resetHandler = () => {
-		setTree(initialTree);
+		// Deep clone
+		setTree(JSON.parse(JSON.stringify(initialTree)));
 		setUniqueId(1);
 	};
 
