@@ -70,9 +70,6 @@ export const Tree = () => {
 
 	const buildTree = (tree: Array<NodeType>): JSX.Element[] => {
 		return tree.map((node) => {
-			if (node.contains) {
-				buildTree(node.contains);
-			}
 			return (
 				<div className={s.wrapper} key={node.id}>
 					<Row
