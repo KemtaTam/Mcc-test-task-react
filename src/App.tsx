@@ -2,18 +2,17 @@ import React from "react";
 import { Tree } from "./Tree/Tree";
 import "./App.css";
 
-export const initialTree = [
-	{
-		title: "Node 1",
-		id: 0,
-	},
-];
-
 export const App = () => {
+	const initialTree = [
+		{
+			title: "Node 1",
+			id: 0,
+		},
+	];
 
 	return (
 		<div className="App">
-			<Tree />
+			<Tree initialTree={initialTree}/>
 		</div>
 	);
 };

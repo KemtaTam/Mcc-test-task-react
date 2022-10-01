@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { initialTree } from "../App";
 import { Row } from "./Row/Row";
 import s from "./Tree.module.css";
 
@@ -9,14 +8,14 @@ export type NodeType = {
 	contains?: Array<NodeType>;
 };
 
-export const Tree = () => {
+export const Tree = ({initialTree}: {initialTree: Array<NodeType>}) => {
 	const [tree, setTree] = useState([] as Array<NodeType>);
 	const [uniqueId, setUniqueId] = useState(1);
 
 	useEffect(() => {
 		// Deep clone
 		setTree(JSON.parse(JSON.stringify(initialTree)));
-	}, []);
+	}, [initialTree]);
 
 	const addRowHandler = (id: number) => {
 		// the wrapper function is needed for the first iteration to work on the original tree
