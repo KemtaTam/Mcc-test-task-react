@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Mcc-test-task-react/static/css/main.4cc52a5f.css",
+    "main.js": "/Mcc-test-task-react/static/js/main.0205ad82.js",
+    "static/media/rubbish.png": "/Mcc-test-task-react/static/media/rubbish.2f20e1889fcefe46971b.png",
+    "index.html": "/Mcc-test-task-react/index.html",
+    "main.4cc52a5f.css.map": "/Mcc-test-task-react/static/css/main.4cc52a5f.css.map",
+    "main.0205ad82.js.map": "/Mcc-test-task-react/static/js/main.0205ad82.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4cc52a5f.css",
+    "static/js/main.0205ad82.js"
+  ]
+}
