@@ -1,0 +1,25 @@
+.tree{
+	margin-left: 50px;
+}
+
+.wrapper{
+	padding-left: 20px;
+	border-left: 1px dotted gray;
+	position: relative;
+}
+
+.bReset{
+	background-color: rgba(0, 0, 0, 0.486);
+	color: white;
+	border: none;
+	cursor: pointer;
+	padding: 5px 20px;
+	font-size: 20px;
+}
+.bReset:hover{
+	background-color: rgba(0, 0, 0, 0.192);
+}
+
+.no_data{
+	margin-left: 50px;
+}
