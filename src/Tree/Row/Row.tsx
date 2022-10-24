@@ -9,9 +9,10 @@ type PropsType = {
 	setTree: any;
 	addRowHandler: (id: number) => void;
 	delRowHandler: (id: number) => void;
+	editTitleHandler: (id: number, newTitle: string) => void;
 };
 
-export const Row: React.FC<PropsType> = ({ node, addRowHandler, delRowHandler, setTree }) => {
+export const Row: React.FC<PropsType> = ({ node, addRowHandler, delRowHandler, setTree, editTitleHandler }) => {
 	const [inputValue, setInputValue] = useState(node.title);
 
 	const autoResize = (e: any) => {
@@ -28,6 +29,7 @@ export const Row: React.FC<PropsType> = ({ node, addRowHandler, delRowHandler, s
 					value={inputValue}
 					onChange={(e) => setInputValue(e.target.value)}
 					onInput={autoResize}
+					onBlur={(e) => editTitleHandler(node.id, e.target.value)}
 				/>
 			</p>
 			<button className={s.bAdd} onClick={() => setTree(addRowHandler(node.id))}>

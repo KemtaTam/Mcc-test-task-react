@@ -42,6 +42,23 @@ export const Tree = ({initialTree}: {initialTree: Array<NodeType>}) => {
 		return wrapper(tree, id);
 	};
 
+	const editTitleHandler = (id: number, newTitle: string) => {
+		debugger
+		// the wrapper function is needed for the first iteration to work on the original tree
+		const wrapper = (tree: Array<NodeType>, id: number, newTitle: string) => {
+			return tree.map((node) => {
+				if (node.id === id) {
+					node.title = newTitle;
+					return node;
+				} 
+				else if (node.contains) wrapper(node.contains, id, newTitle);
+
+				return node;
+			});
+		};
+		return wrapper(tree, id, newTitle);
+	};
+
 	const delRowHandler = (id: number) => {
 		// the wrapper function is needed for the first iteration to work on the original tree
 		const wrapper = (tree: Array<NodeType>, id: number) => {
@@ -58,7 +75,6 @@ export const Tree = ({initialTree}: {initialTree: Array<NodeType>}) => {
 				return returnObj;
 			});
 		};
-
 		return wrapper(tree, id);
 	};
 
@@ -71,6 +87,7 @@ export const Tree = ({initialTree}: {initialTree: Array<NodeType>}) => {
 						setTree={setTree}
 						addRowHandler={addRowHandler}
 						delRowHandler={delRowHandler}
+						editTitleHandler={editTitleHandler}
 					/>
 					{node.contains && buildTree(node.contains)}
 				</div>
